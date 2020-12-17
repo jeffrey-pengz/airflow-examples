@@ -21,4 +21,4 @@ dag = DAG(
 
 
 run_this = BashOperator(
-    task_id='run_whoami', bash_command='id', dag=dag)
+    task_id='run_whoami', bash_command='ls -las /opt/bitnami', dag=dag)
