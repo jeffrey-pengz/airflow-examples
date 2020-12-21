@@ -4,6 +4,7 @@ from airflow.operators import PythonOperator
 from airflow.models import DAG
 from datetime import datetime, timedelta
 
+import pip
 import time
 from pprint import pprint
 
