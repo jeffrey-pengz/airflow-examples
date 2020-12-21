@@ -4,7 +4,10 @@ from airflow.operators import PythonOperator
 from airflow.models import DAG
 from datetime import datetime, timedelta
 
-import pip
+from os.path import expanduser, join, abspath
+import sqlalchemy
+from sqlalchemy import *
+
 import time
 from pprint import pprint
 
