@@ -1,3 +1,4 @@
+import airflow
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.contrib.operators.spark_submit_operator import SparkSubmitOperator
