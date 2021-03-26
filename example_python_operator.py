@@ -1,7 +1,7 @@
 from __future__ import print_function
 from builtins import range
-from airflow.operators import PythonOperator
-from airflow.models import DAG
+from airflow import DAG
+from airflow.operators.python import PythonOperator, PythonVirtualenvOperator
 from datetime import datetime, timedelta
 
 from os.path import expanduser, join, abspath
