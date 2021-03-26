@@ -40,7 +40,7 @@ run_this = PythonOperator(
     python_callable=print_context,
     dag=dag)
 
-for i in range(10):
+for i in range(3):
     '''
     Generating 10 sleeping task, sleeping from 0 to 9 seconds
     respectively
