@@ -1,6 +1,7 @@
 from builtins import range
-from airflow.operators import BashOperator, DummyOperator
-from airflow.models import DAG
+from airflow import DAG
+from airflow.operators.bash import BashOperator
+from airflow.operators.dummy import DummyOperator
 from datetime import datetime, timedelta
 
 seven_days_ago = datetime.combine(datetime.today() - timedelta(7),
