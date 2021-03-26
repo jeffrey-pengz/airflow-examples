@@ -1,5 +1,6 @@
-from airflow.operators import BranchPythonOperator, DummyOperator
-from airflow.models import DAG
+from airflow import DAG
+from airflow.operators.python import BranchPythonOperator
+from airflow.operators.dummy import DummyOperator
 from datetime import datetime, timedelta
 import random
 
