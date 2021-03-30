@@ -23,8 +23,8 @@ start = DummyOperator(task_id='run_this_first', dag=dag)
 
 passing = KubernetesPodOperator(namespace='default',
                           image="ubuntu:16.04",
-                          cmds=["bash", "-cx"],
-                          arguments=["echo", "10"],
+                          cmds=["echo"],
+                          arguments=["hello world"],
                           labels={"foo": "bar"},
                           name="passing-test",
                           task_id="passing-task",
