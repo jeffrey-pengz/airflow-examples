@@ -22,8 +22,9 @@ dag = DAG(
 start = DummyOperator(task_id='run_this_first', dag=dag)
 
 passing = KubernetesPodOperator(namespace='default',
-                          image="alpine",
-                          cmds=["sh", "-c", "mkdir -p /airflow/xcom/;echo '[1,2,3,4]' > /airflow/xcom/return.json"],
+                          image="ubuntu:16.04",
+                          cmds=["echo"],
+                          arguments=["hello world"],
                           do_xcom_push=True,
                           is_delete_operator_pod=True,
                           labels={"foo": "bar"},
@@ -33,11 +34,4 @@ passing = KubernetesPodOperator(namespace='default',
                           dag=dag
                           )
 
-pod_task_xcom_result = BashOperator(
-        bash_command="echo \"{{ task_instance.xcom_pull('write-xcom')[0] }}\"",
-        task_id="pod_task_xcom_result",
-        dag=dag
-    )
-
 passing.set_upstream(start)
-pod_task_xcom_result.set_upstream(passing)
