@@ -35,7 +35,7 @@ passing = KubernetesPodOperator(namespace='default',
                           )
 
 pod_task_xcom_result = BashOperator(
-        bash_command="echo \"{{ task_instance.xcom_pull('write-xcom')[0] }}\"",
+        bash_command="echo \"{{ task_instance.xcom_pull('passing-task')[0] }}\"",
         task_id="pod_task_xcom_result",
         dag=dag
     )
