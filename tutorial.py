@@ -4,7 +4,7 @@ Code that goes along with the Airflow located
 [here](http://pythonhosted.org/airflow/tutorial.html)
 """
 from airflow import DAG
-from airflow.operators import BashOperator
+from airflow.operators.bash import BashOperator
 from datetime import datetime, timedelta
 
 seven_days_ago = datetime.combine(datetime.today() - timedelta(7),
