@@ -1,6 +1,6 @@
 from __future__ import print_function
 from builtins import range
-from airflow.operators import BashOperator
+from airflow.operators.bash import BashOperator
 from airflow.models import DAG
 from datetime import datetime, timedelta
 
