@@ -19,7 +19,7 @@
 apiVersion: "sparkoperator.k8s.io/v1beta2"
 kind: SparkApplication
 metadata:
-  name: "spark-pi-{{ ds }}-{{ run_id }}"
+  name: "spark-pi-{{ ds }}-{{ run_id }}-{{ dag_run.conf['project_code'] }}"
   namespace: spark-work
 spec:
   type: Python
