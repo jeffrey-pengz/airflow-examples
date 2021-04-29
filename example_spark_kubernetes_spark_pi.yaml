@@ -29,7 +29,7 @@ spec:
   imagePullPolicy: Always
   mainApplicationFile: local:///opt/spark/work-dir/main.py
   arguments:
-    - '{"endpoint":"http://my-minio.default:9000","access_key":"minio","access_secret":"minio123","input":"s3a://data/jeff_test_data1.csv","output":"s3a://data/jeff_test_delta2.parquet"}'
+    - "{{ json.dumps(dag_run.conf['setting']) }}"
   sparkVersion: "3.1.1"
   sparkConf:
     "spark.eventLog.enabled": "true"
