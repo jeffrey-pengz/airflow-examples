@@ -35,6 +35,7 @@ from airflow import DAG
 from airflow.providers.cncf.kubernetes.operators.spark_kubernetes import SparkKubernetesOperator
 from airflow.providers.cncf.kubernetes.sensors.spark_kubernetes import SparkKubernetesSensor
 from airflow.utils.dates import days_ago
+import json
 
 # [END import_module]
 
@@ -59,6 +60,7 @@ dag = DAG(
     description='submit spark-pi as sparkApplication on kubernetes',
     schedule_interval=None,
     start_date=days_ago(1),
+    user_defined_macros={'json': json}
 )
 
 t1 = SparkKubernetesOperator(
