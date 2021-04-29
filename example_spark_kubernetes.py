@@ -75,6 +75,7 @@ t2 = SparkKubernetesSensor(
     namespace="spark-work",
     application_name="{{ task_instance.xcom_pull(task_ids='spark_pi_submit')['metadata']['name'] }}",
     kubernetes_conn_id="kubernetes_default",
+    attach_log=True,
     dag=dag,
 )
 t1 >> t2
