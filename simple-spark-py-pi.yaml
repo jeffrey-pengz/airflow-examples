@@ -36,8 +36,9 @@ spec:
   hadoopConf:
     "fs.s3a.access.key": "minio"
     "fs.s3a.secret.key": "minio123"
-    "fs.s3a.endpoint": "http://10.43.95.94:9000"
+    "fs.s3a.endpoint": "http://my-minio.minio.svc:9000"
     "fs.s3a.connection.ssl.enabled": "false"
+    "fs.s3a.path.style.access": "true"
   deps:
     jars:
       - https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.2.0/hadoop-aws-3.2.0.jar
